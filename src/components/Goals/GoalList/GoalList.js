@@ -1,17 +1,17 @@
-import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
-import './CourseGoalList.css';
+import GoalItem from '../GoalItem/GoalItem';
+import './GoalList.css';
 
 export default function GoalList(props){
   return (
     <ul className="goal-list">
       {props.items.map(goal => (
-        <CourseGoalItem
+        <GoalItem
           key={goal.id}
           id={goal.id}
           onDelete={props.onDeleteItem}
         >
           {goal.text}
-        </CourseGoalItem>
+        </GoalItem>
       ))}
     </ul>
   );

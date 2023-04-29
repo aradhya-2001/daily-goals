@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import Button from "../../UI/Button/Button";
-import "./CourseInput.css";
+import "./Input.css";
 
-export default function CourseInput(props) {
+export default function Input(props) {
   const [input, updateInput] = useState("");
 
   const inputHandler = (event) => {

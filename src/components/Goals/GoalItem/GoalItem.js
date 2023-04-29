@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './CourseGoalItem.css';
+import './GoalItem.css';
 
-export default function CourseGoalItem(props){
+export default function GoalItem(props){
   // const [deleteText, setDeleteText] = useState('');
 
   const deleteHandler = () => {

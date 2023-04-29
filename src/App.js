@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
-import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
+import GoalList from './components/Goals/GoalList/GoalList';
+import Input from './components/Goals/Input/Input';
 import './App.css';
 
 export default function App(){
@@ -27,13 +27,13 @@ export default function App(){
   let content = <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>;
 
   if (goals.length > 0) {
-    content = <CourseGoalList items={goals} onDeleteItem={delGoal} />
+    content = <GoalList items={goals} onDeleteItem={delGoal} />
   }
 
   return (
     <div>
       <section id="goal-form">
-        <CourseInput onAddGoal={addGoal} />
+        <Input onAddGoal={addGoal} />
       </section>
       <section id="goals">
         {content}
