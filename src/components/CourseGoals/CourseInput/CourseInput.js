@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-import Button from '../../UI/Button/Button';
-import './CourseInput.css';
+import Button from "../../UI/Button/Button";
+import "./CourseInput.css";
 
-const CourseInput = props => {
-  const [enteredValue, setEnteredValue] = useState('');
+export default function CourseInput(props) {
+  const [input, updateInput] = useState("");
 
-  const goalInputChangeHandler = event => {
-    setEnteredValue(event.target.value);
+  const inputHandler = (event) => {
+    updateInput(event.target.value);
   };
 
-  const formSubmitHandler = event => {
+  const submitHandler = (event) => {
     event.preventDefault();
-    props.onAddGoal(enteredValue);
+    if(input.length>0){
+      props.onAddGoal(input);
+    }
+     updateInput("") 
   };
 
   return (
-    <form onSubmit={formSubmitHandler}>
+    <form onSubmit={submitHandler}>
       <div className="form-control">
-        <label>Course Goal</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+        <label>Daily Goals</label>
+        <input type="text" value={input} onChange={inputHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
   );
-};
-
-export default CourseInput;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Button.css';
 
-const Button = props => {
+export default function Button(props){
   return (
     <button type={props.type} className="button" onClick={props.onClick}>
       {props.children}
@@ -10,4 +10,3 @@ const Button = props => {
   );
 };
 
-export default Button;

@@ -1,9 +1,7 @@
-import React from 'react';
-
 import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
 import './CourseGoalList.css';
 
-const CourseGoalList = props => {
+export default function GoalList(props){
   return (
     <ul className="goal-list">
       {props.items.map(goal => (
@@ -19,4 +17,3 @@ const CourseGoalList = props => {
   );
 };
 
-export default CourseGoalList;
