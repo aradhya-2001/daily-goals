@@ -5,17 +5,24 @@ import "./Input.css";
 
 export default function Input(props) {
   const [input, updateInput] = useState("");
+  const [valid, setValid] = useState(true);
 
   const inputHandler = (event) => {
-    updateInput(event.target.value);
+    let currInput=event.target.value
+    updateInput(currInput);
+    if(currInput.trim().length>0){    /* on clicking add goal with empty input css changes but when we start typing that css should be gone.  */
+      setValid(true);
+    }
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if(input.length>0){
-      props.onAddGoal(input);
+    if (input.trim().length === 0) {
+      setValid(false);
+      return;
     }
-     updateInput("") 
+    props.onAddGoal(input);
+    updateInput("");
   };
 
   return (
