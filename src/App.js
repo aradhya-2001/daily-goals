@@ -6,7 +6,7 @@ import './App.css';
 export default function App(){
   const [goals, setGoals] = useState([
     { text: 'Click on button to add goal', id: 'g1' },
-    { text: 'Click on any goal to delete', id: 'g2' }
+    { text: 'Click on any goal to delete it', id: 'g2' }
   ]);
 
   const addGoal = enteredText => {
@@ -37,13 +37,6 @@ export default function App(){
       </section>
       <section id="goals">
         {content}
-        {/* {courseGoals.length > 0 && (
-          <CourseGoalList
-            items={courseGoals}
-            onDeleteItem={deleteItemHandler}
-          />
-        ) // <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
-        } */}
       </section>
     </div>
   );

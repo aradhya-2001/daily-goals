@@ -1,7 +1,6 @@
 import { useState } from "react";
-
 import Button from "../../UI/Button/Button";
-import "./Input.css";
+import  classes from "./Input.module.css"; // styles is an object having all classnames and id's in it 
 
 export default function Input(props) {
   const [input, updateInput] = useState("");
@@ -27,7 +26,7 @@ export default function Input(props) {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className={`form-control ${valid? "":"invalid"}`}>     {/* add inValid class when valid==false otherwise add an empty string */}
+      <div className={`${classes["form-control"]} ${valid? "":classes.invalid}`}>     {/* coz of class name "form-control" having '-' in it thats why we have used the format styles["form-control"] intead of default styles.form-control. Adding inValid class when valid==false otherwise add an empty string */}
         <label>Daily Goals</label>
         <input type="text" value={input} onChange={inputHandler} />
       </div>
