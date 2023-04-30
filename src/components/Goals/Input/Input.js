@@ -27,7 +27,7 @@ export default function Input(props) {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="form-control">
+      <div className={`form-control ${valid? "":"invalid"}`}>     {/* add inValid class when valid==false otherwise add an empty string */}
         <label>Daily Goals</label>
         <input type="text" value={input} onChange={inputHandler} />
       </div>
