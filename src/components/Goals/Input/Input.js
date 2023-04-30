@@ -1,7 +1,6 @@
 import { useState } from "react";
-
 import Button from "../../UI/Button/Button";
-import "./Input.css";
+import  styles from "./Input.module.css";
 
 export default function Input(props) {
   const [input, updateInput] = useState("");
@@ -27,7 +26,7 @@ export default function Input(props) {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className={`form-control ${valid? "":"invalid"}`}>     {/* add inValid class when valid==false otherwise add an empty string */}
+      <div className={`${styles["form-control"]} ${valid? "":styles.invalid}`}>     {/* add inValid class when valid==false otherwise add an empty string */}
         <label>Daily Goals</label>
         <input type="text" value={input} onChange={inputHandler} />
       </div>

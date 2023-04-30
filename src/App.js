@@ -6,7 +6,7 @@ import './App.css';
 export default function App(){
   const [goals, setGoals] = useState([
     { text: 'Click on button to add goal', id: 'g1' },
-    { text: 'Click on any goal to delete', id: 'g2' }
+    { text: 'Click on any goal to delete it', id: 'g2' }
   ]);
 
   const addGoal = enteredText => {
