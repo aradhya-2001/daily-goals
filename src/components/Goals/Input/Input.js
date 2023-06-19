@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../UI/Button/Button";
-import  classes from "./Input.module.css"; // styles is an object having all classnames and id's in it 
+import  classes from "./Input.module.css"; // classes is an object having all classnames and id's in it 
 
 export default function Input(props) {
   const [input, updateInput] = useState("");
